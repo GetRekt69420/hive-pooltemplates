@@ -1,0 +1,48 @@
+[
+    {
+        "pool": {
+            "name": "miningCo",
+            "url": "https://miningco.net/",
+            "fee": 1,
+            "type": "PROP/SOLO"
+        }
+    },
+    {
+        "coin": "BTRM",
+        "servers": [
+            {
+                "geo": "North-America",
+                "urls": [
+                    "miningco.net:10100"
+                ],
+                "ssl_urls": [
+                    "us.miningco.net:10100"
+                ]
+            }
+        ],
+        "miners": {
+            "cpuminer-opt": {
+                "url": "stratum+tcps://%URL%",
+                "template": "%WAL%.%WORKER_NAME%",
+                "algo": "gr",
+                "pass": "c=btrm,m=solo",
+                "max-temp": 0,
+                "fork": "gr"
+            },
+            "xmrig-new": {
+                "url": "%URL%",
+                "template": "%WAL%.%WORKER_NAME%",
+                "algo": "ghostrider",
+                "pass": "c=btrm,m=solo",
+                "cpu": "1",
+                "fork": "xmrig"
+            },
+            "wildrig-multi": {
+                "url": "%URL%",
+                "template": "%WAL%.%WORKER_NAME%",
+                "algo": "ghostrider",
+                "pass": "c=btrm,m=solo"
+            }
+        }
+    }
+]
